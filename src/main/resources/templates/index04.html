@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index04</title>
+</head>
+<body>
+
+信息:<input type="text" th:value="${message}"/><br>
+
+<!--拼接字符串方式一-->
+<span th:text="'shangsan'+${message}"></span>
+<!--拼接字符串方式二-->
+<span th:text="|zhangsan${message}|"></span>
+
+</body>
+</html>

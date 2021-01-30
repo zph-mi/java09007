@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index05</title>
+</head>
+<body>
+
+<h1 th:if="${flag=='yes'}">中公教育</h1>
+<h1 th:unless="${flag=='yes'}">有就业</h1>
+
+<div th:switch="${menu}">
+    <span th:case="admin">user is admin</span>
+    <span th:case="manager">user is manager</span>
+</div>
+<br>
+<!--引入片段-->
+<!-- 把片段的内容直接插入到当前位置 -->
+<div th:insert="~{footer :: copy}"></div>
+<br>
+<!--只将片段的内容加入到页面 没有样式-->
+<div th:include="~{footer :: copy}"></div>
+<br>
+<!-- 使用片段的内容替换当前标签 -->
+<div th:replace="~{footer :: copy}"></div>
+<br>
+
+</body>
+</html>
